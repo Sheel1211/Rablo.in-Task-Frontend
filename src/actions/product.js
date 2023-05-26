@@ -6,7 +6,7 @@ export const getAllProducts = () => async (dispatch) => {
       type: "GET_PRODUCTS_REQUEST",
     });
 
-    const { data } = await axios.get("http://localhost:4000/api/v1/getAll");
+    const { data } = await axios.get("https://rablo-in-task-backend.onrender.com/api/v1/getAll");
     console.log(data);
 
     dispatch({
@@ -26,7 +26,7 @@ export const getFeaturedProducts = () => async (dispatch) => {
       type: "GET_FEATURED_PRODUCTS_REQUEST",
     });
 
-    const { data } = await axios.get("http://localhost:4000/api/v1/featuredProducts");
+    const { data } = await axios.get("https://rablo-in-task-backend.onrender.com/api/v1/featuredProducts");
     console.log(data);
 
     dispatch({
@@ -50,7 +50,7 @@ export const AddProduct =
     // console.log(typeof(date));
     
       const { data } = await axios.post(
-        "http://localhost:4000/api/v1/add",
+        "https://rablo-in-task-backend.onrender.com/api/v1/add",
         {
           Product_Id:id,
           Name:name,
@@ -89,7 +89,7 @@ export const deleteProduct =
     // console.log(typeof(date));
     
       const { data } = await axios.delete(
-        `http://localhost:4000/api/v1/delete/${id}`,
+        `https://rablo-in-task-backend.onrender.com/api/v1/delete/${id}`,
         
       );
     //   console.log(data);
@@ -115,7 +115,7 @@ export const editProduct =
     // console.log(typeof(date));
     
       const { data } = await axios.put(
-        `http://localhost:4000/api/v1/update/${key}`,
+        `https://rablo-in-task-backend.onrender.com/api/v1/update/${key}`,
         {
           Product_Id:id,
           Name:name,
@@ -152,7 +152,7 @@ export const editProduct =
         type:"GET_MAX_PRODUCTS_REQUEST",
       })
 
-      const {data} = await axios.get(`http://localhost:4000/api/v1/fetchMaxPrice/${maxPrice}`);
+      const {data} = await axios.get(`https://rablo-in-task-backend.onrender.com/api/v1/fetchMaxPrice/${maxPrice}`);
       dispatch({
         type:"GET_MAX_PRODUCTS_SUCCESS",
         payload:data,
@@ -171,7 +171,7 @@ export const editProduct =
         type:"GET_MIN_PRODUCTS_REQUEST",
       })
 
-      const {data} = await axios.get(`http://localhost:4000/api/v1/fetchMinPrice/${minPrice}`);
+      const {data} = await axios.get(`https://rablo-in-task-backend.onrender.com/api/v1/fetchMinPrice/${minPrice}`);
       dispatch({
         type:"GET_MIN_PRODUCTS_SUCCESS",
         payload:data,
